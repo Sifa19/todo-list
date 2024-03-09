@@ -30,6 +30,7 @@ body {
   font-family: "Monoton";
   font-size: 2.5rem;
   font-weight: 550;
+  text-align: center;
   text-transform: uppercase;
   word-spacing: 0.5rem;
   padding: 2.4rem 0;
@@ -48,7 +49,9 @@ body {
 }
 .add-list input,
 .add-list button,
-.add-list select {
+.add-list select,
+.btn button,
+.btn select {
   background-color: #ffebb3;
   color: #5a3e2b;
   border: none;
@@ -67,6 +70,9 @@ body {
   color: #ffebb3;
   text-align: center;
   padding: 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .display ul {
@@ -86,12 +92,26 @@ body {
   gap: 20px;
 }
 
-.status {
+.btn {
   display: flex;
   justify-content: center;
+  gap: 2rem;
+}
+
+.status {
+  text-align: center;
   background-color: #76c7ad;
   font-size: 1rem;
   font-style: italic;
   font-weight: 900;
   padding: 1rem;
+}
+
+@media screen and (max-width: 350px) {
+  .add-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
 }

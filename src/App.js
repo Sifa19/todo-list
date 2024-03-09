@@ -29,6 +29,12 @@ const DisplayList = () => {
       <li><input type="checkbox" />item 2</li>
       <li><input type="checkbox" />item 3</li>
     </ul>
+    <div className="btn">
+      <select name="SORT" id="">
+        <option value="SORT">SORT</option>
+      </select>
+      <button>CLEAR LIST</button>
+    </div>
   </div>
 }
 
