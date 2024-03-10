@@ -1,55 +1,24 @@
 import { useState } from "react";
+import Logo from "./Logo";
+import AddList from "./AddList";
+import DisplayList from "./DisplayList";
+import Status from "./Status";
 
 const initialItems = [
-  { id: 1, description: "Passports", quantity: 2, packed: false },
-  { id: 2, description: "Socks", quantity: 12, packed: false },
+  { id: 1, description: "Passports", completed: false },
+  { id: 2, description: "Socks", completed: false },
+  { id: 3, description: "Clothes", completed: false },
+  { id: 4, description: "Jeans", completed: false },
 ];
 
-const Logo = () => {
-  return <div className="logo">
-    <span>📃</span> TO DO LIST <span>🖊️</span>
-  </div>
-}
-
-const AddList = () => {
-  return <div className="add-list">
-    <span>Add items in the list</span>
-    <select type="text" name="quantity" id="" >
-      <option value="1">1</option>
-    </select>
-    <input type="text" name="value" id="" />
-    <button>ADD</button>
-  </div>
-}
-
-const DisplayList = () => {
-  return <div className="display">
-    <ul >
-      <li><input type="checkbox" /> item 1</li>
-      <li><input type="checkbox" />item 2</li>
-      <li><input type="checkbox" />item 3</li>
-    </ul>
-    <div className="btn">
-      <select name="SORT" id="">
-        <option value="SORT">SORT</option>
-      </select>
-      <button>CLEAR LIST</button>
-    </div>
-  </div>
-}
-
-const Status = () => {
-  return <div className="status">
-    📃 you have 6 items on your list, and  you have already completed 0 (0%)
-  </div>
-}
-
 export default function App() {
-  return <div className="conatiner">
-    <Logo />
-    <AddList />
-    <DisplayList />
-    <Status />
-  </div>
-
+  const [items, setItems] = useState(initialItems);
+  return (
+    <div className="conatiner">
+      <Logo />
+      <AddList setItems={setItems} />
+      <DisplayList items={items} setItems={setItems} />
+      <Status items={items} />
+    </div>
+  );
 }

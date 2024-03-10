@@ -76,6 +76,7 @@ body {
 }
 
 .display ul {
+  padding: 2rem 0;
   list-style: none;
   display: grid;
   /* grid-template-columns: 1fr 1fr 1fr; */
@@ -89,7 +90,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+}
+
+.display ul li button {
+  border: none;
+  background-color: #5a3e2b;
+}
+
+.completed {
+  text-decoration: line-through;
 }
 
 .btn {
